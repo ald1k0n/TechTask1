@@ -1,24 +1,13 @@
-# googlemap
+# ТЗ первое (google map/ yandex map)
 
-## Project setup
-```
-yarn install
-```
+- запуск производится по деволту через команду vue-cli-service serve
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Использовал vue2-google-map а так же стороний геокодер
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- Из-за того что геокодер был не от гугл карт некоторые координаты выдаются не правильно
 
-### Lints and fixes files
-```
-yarn lint
-```
+## При входе на страницу будет два инпута
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Писать названия или улицы только на английском языке
+- После нажать на addPosition кнопку и потом draw markers
+- Снизу будет история поиска которая показывает что пользователь вводил до этого
