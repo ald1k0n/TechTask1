@@ -2,9 +2,12 @@
 	<div>
 		<div class="History">
 			<h3>History of search:</h3>
-			<strong v-for="(value, index) in searchHistory" :key="index">
-				{{ value }}
-			</strong>
+			<template v-if="history.length">
+				<strong id="history" v-for="(value, index) in history" :key="index">
+					{{ value }}
+				</strong>
+			</template>
+			<template v-else> История локаций отсутствует </template>
 		</div>
 	</div>
 </template>
@@ -13,19 +16,16 @@
 export default {
 	name: 'SearchHistory',
 	props: {
-		history: Array,
-	},
-	data() {
-		let store = [];
-		store.push(this.$props.history);
-		return {
-			searchHistory: store,
-		};
-	},
-	computed: {
-		SHistory: function () {
-			return this.searchHistory;
+		history: {
+			type: Array,
+			default: () => [],
 		},
 	},
 };
 </script>
+
+<style>
+#history {
+	display: block;
+}
+</style>

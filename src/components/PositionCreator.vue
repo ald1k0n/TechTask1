@@ -8,10 +8,10 @@
 			<button @click="addPosition">Add position</button>
 		</div>
 		<GoogleMapVue
-			:firstPoint="this.coordinatesOfFirstPlace"
-			:secondPoint="this.coordinatesOfSecondPlace"
+			:firstPoint="coordinatesOfFirstPlace"
+			:secondPoint="coordinatesOfSecondPlace"
 		/>
-		<SearchHistory :history="this.history" />
+		<SearchHistory :history="history" />
 	</div>
 </template>
 
@@ -57,17 +57,15 @@ export default {
 			this.history.push(`From ${this.query} to ${this.destination}`);
 		},
 		addQueryInput(e) {
-			const { value } = e.target;
-			this.query = value;
+			this.query = e.target.value;
 		},
 		addDestination(e) {
-			const { value } = e.target;
-			this.destination = value;
+			this.destination = e.target.value;
 		},
 	},
 	components: {
 		GoogleMapVue,
 		SearchHistory,
-	},
+	}
 };
 </script>
